@@ -26,12 +26,14 @@ function setup() {
                 drawHexagon() {
                     fill(this.selectedColor[0], this.selectedColor[1], this.selectedColor[2], this.opacity);
                     noStroke();
-                    triangle(this.center.x, this.center.y, this.p1.x, this.p1.y, this.p2.x, this.p2.y);
-                    triangle(this.center.x, this.center.y, this.p2.x, this.p2.y, this.p3.x, this.p3.y);
-                    triangle(this.center.x, this.center.y, this.p3.x, this.p3.y, this.p4.x, this.p4.y);
-                    triangle(this.center.x, this.center.y, this.p4.x, this.p4.y, this.p5.x, this.p5.y);
-                    triangle(this.center.x, this.center.y, this.p5.x, this.p5.y, this.p6.x, this.p6.y);
-                    triangle(this.center.x, this.center.y, this.p6.x, this.p6.y, this.p1.x, this.p1.y);
+                    beginShape();
+                    vertex(this.p1.x,this.p1.y);
+                    vertex(this.p2.x,this.p2.y);
+                    vertex(this.p3.x,this.p3.y);
+                    vertex(this.p4.x,this.p4.y);
+                    vertex(this.p5.x,this.p5.y);
+                    vertex(this.p6.x,this.p6.y);
+                    endShape(CLOSE);
                 },
                 fadeInOut() {
                     if(this.dimming){
